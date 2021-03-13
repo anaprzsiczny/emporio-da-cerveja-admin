@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
+import { Redirect } from 'react-router';
 import Input from '../../../Components/Input';
 import InputButton from '../../../Components/InputButton';
+import useLogout from '../../../Hooks/useLogout';
 import { SubmitProductTypes } from '../../../Types/submitTypes';
 
 const RegisterProducts = () => {
+
+  const [token] = useState<string | null>(localStorage.getItem("token"))
+
+  useLogout(token)
 
   const {register, handleSubmit, errors} = useForm()
 
@@ -30,6 +36,8 @@ const RegisterProducts = () => {
       <Helmet>
       <title>Produtos | Empório da Cerveja</title>
       </Helmet>
+
+      {!token && <Redirect to="/login" />}
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>

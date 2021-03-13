@@ -6,7 +6,7 @@ const UserService = {
   list: () => api.get("/users?role=admin&role=editor"),
   delete: (id: number) => api.delete(`/users/${id}`),
   register: (request: SubmitUserTypes) => api.post("/users", request),
-  get: (id: number) => api.get(`/users/${id}`)
+  get: (id: number) => api.get(`/users/${id}`),
 }
 
 export default UserService

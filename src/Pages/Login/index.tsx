@@ -15,7 +15,7 @@ const Login = () => {
 
   const dispatch = useDispatch()
 
-  const { loading, error, success } = useSelector((state: any) => state.user)
+  const { loading, error, login } = useSelector((state: any) => state.user)
 
   const onSubmit = (data: SubmitLoginTypes) => {
     
@@ -56,7 +56,7 @@ const Login = () => {
         </label>
         <InputButton content={"Entrar"} />
       </form>
-      {success === true && <Redirect to="/" />}
+      {login === true && <Redirect to="/" />}
     </div>
   )
 }

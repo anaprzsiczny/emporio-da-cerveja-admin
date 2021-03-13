@@ -14,5 +14,14 @@ export interface SubmitUserTypes {
   name: string,
   email: string,
   password?: string,
-  role: string
+  role: string,
+  id?: number
+}
+
+export interface SubmitProductTypes {
+  title: string,
+  price: string,
+  description: string,
+  image: string,
+  id?: number
 }

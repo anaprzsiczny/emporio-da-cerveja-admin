@@ -22,6 +22,8 @@ export const deleteUserFailure = (error: boolean) => action(UserActionTypes.DELE
 
 export const getUsersRequest = () => action(UserActionTypes.GET_USERS_REQUEST)
 
-export const getUsersSuccess = () => action(UserActionTypes.GET_USERS_SUCCESS)
+export const getUsersSuccess = (users: any) => action(UserActionTypes.GET_USERS_SUCCESS, users)
 
 export const getUsersFailure = (error: boolean) => action(UserActionTypes.GET_USERS_FAILURE, error)
+
+export const loadUserLogout = () => action(UserActionTypes.USER_LOGOUT)
