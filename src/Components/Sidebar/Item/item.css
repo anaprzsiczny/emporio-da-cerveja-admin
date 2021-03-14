@@ -1,0 +1,26 @@
+.link-sidebar {
+  text-decoration: none;
+  color: rgb(70, 69, 69);
+  font-weight: 700;
+  font-size: large;
+  padding: 5px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.link-sidebar:hover {
+  color: black;
+}
+
+.wrapper-link-sidebar:hover {
+  background-color: #ffa935;
+}
+
+.wrapper-link-sidebar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20px;
+}

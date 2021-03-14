@@ -1,0 +1,34 @@
+.container-sidebar {
+  width: 230px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(180deg, #ffa935 0%, #f7e9bd 30%);
+  padding-top: 50px;
+}
+
+.wrapper-sidebar {
+  margin-bottom: 100px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.botao-logout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  font-size: medium;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.botao-logout:hover {
+  background: linear-gradient(#f2f2f2, #e6e6e6);
+}

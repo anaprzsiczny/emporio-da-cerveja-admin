@@ -1,10 +1,11 @@
 import React from 'react';
+import './homeCard.css';
 
 const HomeCard = (props: any) => {
   return (
-    <div>
+    <div className="home-card">
       <p>{props.text}</p>
-      <p>{props.total}</p>
+      <h2>{props.total}</h2>
     </div>
   )
 }

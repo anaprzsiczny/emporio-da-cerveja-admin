@@ -2,6 +2,7 @@ import React from 'react';
 import { AiOutlineUserDelete } from 'react-icons/ai'
 import { useDispatch } from 'react-redux';
 import { deleteUserRequest } from '../../../Store/Ducks/Users/actions';
+import './user.css';
 
 const User = (props: any) => {
 
@@ -12,11 +13,19 @@ const User = (props: any) => {
   }
 
   return(
-    <div>
-      <p>{props.item.name}</p>
-      <p>{props.item.email}</p>
-      <p>{props.item.role}</p>
-      <AiOutlineUserDelete onClick={() => deleteUser(props.item.id)}/>
+    <div className="user-item">
+      <div>
+        <p><strong>{props.item.name}</strong></p>
+      </div>
+      <div>
+        <p>{props.item.email}</p>
+      </div>
+      <div>
+        <p>{props.item.role}</p>
+      </div>
+      <div className="wrapper-delete-user">
+        <AiOutlineUserDelete onClick={() => deleteUser(props.item.id)} className="delete-user"/>
+      </div>
     </div>
   )
 }

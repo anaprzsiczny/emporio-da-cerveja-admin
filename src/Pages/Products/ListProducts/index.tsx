@@ -3,7 +3,9 @@ import { Helmet } from 'react-helmet';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
+import Header from '../../../Components/Header/header';
 import Product from '../../../Components/Main/Product';
+import Sidebar from '../../../Components/Sidebar';
 import useLogout from '../../../Hooks/useLogout';
 import { getProductsRequest } from '../../../Store/Ducks/Products/actions';
 import { SubmitProductTypes } from '../../../Types/submitTypes';
@@ -28,7 +30,7 @@ const ListProducts = () => {
   }, [])
 
   return (
-    <div>
+    <div className="container">
       <Helmet>
         <title>Produtos | Empório da Cerveja</title>
       </Helmet>
@@ -37,13 +39,22 @@ const ListProducts = () => {
 
       {!token && <Redirect to="/login" />}
 
-      {loadingProduct === true && <p>Carregando...</p>}
+      <div>
+        <Sidebar />
+      </div>
 
-      {products !== [] &&
-        products.map((item: SubmitProductTypes) => (
-          <Product item={item} key={item.id} />
-        ))
-      }
+      <div className="main-content">
+        <div>
+          <Header pagina="Produtos"/>
+        </div>
+        {loadingProduct === true && <p>Carregando...</p>}
+        {products !== [] &&
+          products.map((item: SubmitProductTypes) => (
+            <Product item={item} key={item.id} />
+          ))
+        }
+        
+      </div>
     </div>
   )
 }

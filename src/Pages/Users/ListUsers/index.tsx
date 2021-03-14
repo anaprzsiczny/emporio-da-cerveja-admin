@@ -3,7 +3,9 @@ import { Helmet } from 'react-helmet';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
+import Header from '../../../Components/Header/header';
 import User from '../../../Components/Main/User';
+import Sidebar from '../../../Components/Sidebar';
 import useLogout from '../../../Hooks/useLogout';
 import { getUsersRequest } from '../../../Store/Ducks/Users/actions';
 import { SubmitUserTypes } from '../../../Types/submitTypes';
@@ -27,7 +29,7 @@ const ListUsers = () => {
   }, [])
 
   return (
-    <div>
+    <div className="container">
       <Helmet>
         <title>Usuário | Empório da Cerveja</title>
       </Helmet>
@@ -38,13 +40,21 @@ const ListUsers = () => {
 
       {currentUser.role !== "admin" && <Redirect to="/" />}
 
-      {loading === true && <p>Carregando...</p>}
+      <div>
+        <Sidebar />
+      </div>
 
-      {users !== [] && 
-        users.map((item: SubmitUserTypes) => (
-          <User item={item} key={item.id}/>
-        ))
-      }
+      <div className="main-content">
+        <div>
+          <Header pagina="Usuários"/>
+        </div>
+        {loading === true && <p>Carregando...</p>}
+        {users !== [] && 
+          users.map((item: SubmitUserTypes) => (
+            <User item={item} key={item.id}/>
+          ))
+        }
+      </div>
     </div>
   )
 }

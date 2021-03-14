@@ -1,19 +1,35 @@
 import React from 'react';
-import { AiOutlineUserDelete } from 'react-icons/ai'
+import { FiDelete } from 'react-icons/fi'
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteProductRequest } from '../../../Store/Ducks/Products/actions';
+import './product.css'
 
 const Product = (props: any) => {
 
+  const dispatch = useDispatch()
+
+  const { currentUser } = useSelector((state: any) => state.user)
+
   const deleteProduct = (id: number) => {
-    
+    dispatch(deleteProductRequest(id))
   }
 
   return(
-    <div>
-      <p>{props.item.title}</p>
-      <p>{props.item.price}</p>
-      <p>{props.item.description}</p>
-      <img src={props.item.image} />
-      <AiOutlineUserDelete onClick={() => deleteProduct(props.item.id)}/>
+    <div className="product-item">
+      <div>
+        <p><strong>{props.item.title}</strong></p>
+      </div>
+      <div>
+        <p>{props.item.price}</p>
+      </div>
+      <div>
+        <img src={props.item.image} />
+      </div>
+      <div>
+        {currentUser.role === "admin" && 
+          <FiDelete onClick={() => deleteProduct(props.item.id)} className="delete-product"/>
+        }
+      </div>
     </div>
   )
 }

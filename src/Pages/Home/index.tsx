@@ -3,11 +3,13 @@ import { Helmet } from 'react-helmet';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
-import { Link } from 'react-router-dom';
+import Header from '../../Components/Header/header';
 import HomeCard from '../../Components/Main/HomeCard/homeCard';
+import Sidebar from '../../Components/Sidebar';
 import useLogout from '../../Hooks/useLogout';
 import { getProductsRequest } from '../../Store/Ducks/Products/actions';
 import { getUsersRequest } from '../../Store/Ducks/Users/actions';
+import './home.css'
 
 const Home = () => {
 
@@ -15,18 +17,18 @@ const Home = () => {
 
   useLogout(token)
 
-  const { currentUser, success, users, loading, error } = useSelector((state: any) => state.user)
+  const { currentUser, welcome, users, loading, error } = useSelector((state: any) => state.user)
 
-  const { products, errorProduct, loadingProduct } = useSelector((state: any) => state.product)
+  const { products } = useSelector((state: any) => state.product)
 
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if(success === true){
+    if(welcome === true){
       toast.success(`Seja bem-vindo(a), ${currentUser.name}`)
     }
 
-    if(error === true || errorProduct === true){
+    if(error === true){
       toast.error("Não foi possível carregar. Tente novamente.")
     }
 
@@ -35,7 +37,7 @@ const Home = () => {
   }, [])
   
   return (
-    <div>
+    <div className="container">
       <Helmet>
         <title>Home | Empório da Cerveja</title>
       </Helmet>
@@ -43,11 +45,21 @@ const Home = () => {
       {!token && <Redirect to="/login" />}
 
       <Toaster />
-      {loading === true || loadingProduct === true && <p>Carregando...</p>}
-      {users !== [] && <HomeCard total={users.length} text="Usuários"/>}
-      {products !== [] && <HomeCard total={products.length} text="Produtos"/>}
-      <Link to="/users">Usuários</Link>
-      <Link to="/users/register">Cadastrar Usuário</Link>
+      
+      <div>
+        <Sidebar />
+      </div>
+
+      <div className="main-content">
+        <div>
+          <Header pagina="Página Inicial"/>
+        </div>
+        {loading === true && <p>Carregando...</p>}
+        <div className="wrapper-cards">
+          {users !== [] && <HomeCard total={users.length} text="Usuários"/>}
+          {products !== [] && <HomeCard total={products.length} text="Produtos"/>}
+        </div>
+      </div>
     </div>
   )
 }

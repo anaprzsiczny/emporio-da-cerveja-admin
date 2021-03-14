@@ -1,0 +1,25 @@
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  margin-top: 15px;
+  width: 70%;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.delete-user {
+  cursor: pointer;
+  color: red;
+}
+
+.delete-user:hover {
+  color: rgb(145, 16, 16);
+}
+
+.user-item div {
+  width: 25%;
+  margin-left: 35px;
+  text-align: center;
+}

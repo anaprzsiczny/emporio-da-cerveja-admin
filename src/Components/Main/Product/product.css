@@ -1,0 +1,29 @@
+.product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  margin-top: 15px;
+  width: 80%;
+  border-radius: 5px;
+  align-self: center;
+}
+.product-item img {
+  max-width: 60px;
+}
+
+.product-item div {
+  text-align: center;
+  width: 25%;
+  margin-left: 25px;
+  padding-left: 20px;
+}
+
+.delete-product {
+  cursor: pointer;
+  color: red;
+}
+
+.delete-product:hover {
+  color: rgb(145, 16, 16);
+}

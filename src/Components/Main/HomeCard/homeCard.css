@@ -1,0 +1,19 @@
+.home-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  background-color: #fff;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.home-card:hover {
+  border: 1px solid;
+  border-color: cornflowerblue;
+  color: cornflowerblue;
+}
+
+.home-card p {
+  opacity: 0.7;
+}
