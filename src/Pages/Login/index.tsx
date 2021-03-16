@@ -8,6 +8,7 @@ import Input from '../../Components/Input';
 import InputButton from '../../Components/InputButton';
 import { postLoginRequest } from '../../Store/Ducks/Users/actions';
 import { SubmitLoginTypes } from '../../Types/submitTypes';
+import './login.css'
 
 const Login = () => {
 
@@ -37,25 +38,32 @@ const Login = () => {
   }, [error]) 
 
   return (
-    <div>
+    <div className="container-login">
       <Helmet>
         <title>Login | Empório da Cerveja</title>
       </Helmet>
       <Toaster />
-      {loading === true && <p>Carregando...</p>}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          E-mail
-          <Input name="email" type="email" inputRef={register({required: true})}/>
-          {errors.email && <p>Nome obrigatório</p>}
-        </label>
-        <label>
-          Senha
-          <Input name="password" type="password" inputRef={register({required: true})}/>
-          {errors.password && <p>Senha obrigatória</p>}
-        </label>
-        <InputButton content={"Entrar"} />
-      </form>
+      
+      <div className="wrapper-form-login">
+        <img src="/assets/logo-nome.svg" />
+        {loading === true && <p>Carregando...</p>}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          
+          <label htmlFor="email">
+            E-mail:
+            <Input id="email" name="email" type="email" inputRef={register({required: true})}/>
+            {errors.email && <p>Nome obrigatório</p>}
+          </label>
+          <label htmlFor="password">
+            Senha:
+            <Input id="password" name="password" type="password" inputRef={register({required: true})}/>
+            {errors.password && <p>Senha obrigatória</p>}
+          </label>
+          <div className="button-login">
+            <InputButton content={"Entrar"} />
+          </div>
+        </form>
+      </div>
       {login === true && <Redirect to="/" />}
     </div>
   )

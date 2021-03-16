@@ -2,5 +2,6 @@ export interface InputTypes {
   name: string,
   type: string,
   inputRef: any,
-  value?: string
+  value?: string,
+  id: string
 }

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
-import Header from '../../../Components/Header/header';
+import Header from '../../../Components/Header';
 import Product from '../../../Components/Main/Product';
 import Sidebar from '../../../Components/Sidebar';
 import useLogout from '../../../Hooks/useLogout';

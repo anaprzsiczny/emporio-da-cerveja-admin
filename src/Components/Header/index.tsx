@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTitle from './PageTitle/pageTitle';
-import UserInfo from './UserInfo/userInfo';
+import PageTitle from './PageTitle';
+import UserInfo from './UserInfo';
 import './header.css'
 
 const Header = (props: any) => {

@@ -31,3 +31,28 @@ body {
   flex-direction: column;
 }
 
+.wrapper-form {
+  box-sizing: border-box;
+  width: 75%;
+  height: 600px;
+  margin: 80px auto 0;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+  padding-bottom: 40px;
+  padding-top: 40px;
+  border-radius: 3px;
+}
+
+.wrapper-form form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;  
+  margin: 0 auto;
+  height: 100%;
+}
+
+.wrapper-form form label {
+  margin-left: 10px;
+  font-weight: 600;
+}
+

@@ -1,0 +1,12 @@
+.input-radio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-right: 3%;
+}
+
+
+

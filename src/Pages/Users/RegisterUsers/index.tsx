@@ -4,13 +4,14 @@ import { useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
-import Header from '../../../Components/Header/header';
+import Header from '../../../Components/Header';
 import Input from '../../../Components/Input';
 import InputButton from '../../../Components/InputButton';
 import Sidebar from '../../../Components/Sidebar';
 import useLogout from '../../../Hooks/useLogout';
 import { postUserRequest } from '../../../Store/Ducks/Users/actions';
 import { SubmitUserTypes } from '../../../Types/submitTypes';
+import './registerUsers.css'
 
 const RegisterUsers = () => {
 
@@ -64,37 +65,37 @@ const RegisterUsers = () => {
         <div>
           <Header pagina="Cadastrar Novo Usuário"/>
         </div>
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <label>
-            Nome
-            <Input name="name" type="text" inputRef={register({required: true})}/>
+        <div className="wrapper-form">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label htmlFor="name">
+              Nome:
+            </label>
+            <Input id="name" name="name" type="text" inputRef={register({required: true})}/>
             {errors.name && <p>Nome é necessário para cadastrar um usuário</p>}
-          </label>
-          <label>
-            E-mail
-            <Input name="email" type="email" inputRef={register({required: true})}/>
+            <label htmlFor="email">
+              E-mail:
+            </label>
+            <Input id="email" name="email" type="email" inputRef={register({required: true})}/>
             {errors.email && <p>E-mail é necessário para cadastrar um usuário</p>}
-          </label>
-          <label>
-            Senha
-            <Input name="password" type="password" inputRef={register({required: true})}/>
+            <label htmlFor="password">
+              Senha:
+            </label>
+            <Input id="password" name="password" type="password" inputRef={register({required: true})}/>
             {errors.password && <p>Senha é necessária para cadastrar um usuário</p>}
-          </label>
-          <label>
-            Permissão
-            <label>
-              Administrador
-              <Input name="role" type="radio" value="admin" inputRef={register({required: true})}/>
-            </label>
-            <label>
-              Editor
-              <Input name="role" type="radio" value="editor" inputRef={register({required: true})}/>
-            </label>
-            {errors.role && <p>Tipo de permissão é necessário para cadastrar um usuário</p>}
-          </label>
-          <InputButton content={"Cadastrar Produto"} />
-        </form>
+            <div className="input-radio">
+              <Input id="role-admin" name="role" type="radio" value="admin" inputRef={register({required: true})}/>
+              <label htmlFor="role-admin">
+                Administrador
+              </label>
+              <Input id="role-editor" name="role" type="radio" value="editor" inputRef={register({required: true})}/>
+              <label htmlFor="role-editor">
+                Editor
+              </label>
+              {errors.role && <p>Tipo de permissão é necessário para cadastrar um usuário</p>}
+            </div>
+            <InputButton content={"Cadastrar Usuário"} />
+          </form>
+        </div>
       </div>
     </div>
   )
