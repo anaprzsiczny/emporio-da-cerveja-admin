@@ -15,7 +15,7 @@ const Product = (props: any) => {
   }
 
   return(
-    <div className="product-item">
+    <div className="product-item" data-testid="product">
       <div>
         <p><strong>{props.item.title}</strong></p>
       </div>
@@ -23,7 +23,7 @@ const Product = (props: any) => {
         <p>{props.item.price}</p>
       </div>
       <div>
-        <img src={props.item.image} />
+        <img src={props.item.image} alt="product"/>
       </div>
       <div>
         {currentUser.role === "admin" && 

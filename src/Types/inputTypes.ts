@@ -1,7 +1,7 @@
 export interface InputTypes {
   name: string,
   type: string,
-  inputRef: any,
+  inputRef?: any,
   value?: string,
   id: string
 }

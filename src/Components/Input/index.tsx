@@ -11,6 +11,7 @@ const Input = (props: InputTypes) => {
       value={props?.value} 
       className="input-form"
       id={props.id}
+      data-testid={props.id}
     />
   )
 }

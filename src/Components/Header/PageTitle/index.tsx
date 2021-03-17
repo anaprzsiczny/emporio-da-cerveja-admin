@@ -1,8 +1,12 @@
 import React from 'react';
 
-const PageTitle = (props: any) => {
+export interface PageTitleProps {
+  pagina: string
+}
+
+const PageTitle = (props: PageTitleProps) => {
   return(
-    <div>
+    <div data-testid="title">
       <h1>{props.pagina}</h1>
     </div>
   )

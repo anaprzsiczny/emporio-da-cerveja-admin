@@ -45,7 +45,7 @@ const Login = () => {
       <Toaster />
       
       <div className="wrapper-form-login">
-        <img src="/assets/logo-nome.svg" />
+        <img src="/assets/logo-nome.svg" alt="logo empório da cerveja"/>
         {loading === true && <p>Carregando...</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
           

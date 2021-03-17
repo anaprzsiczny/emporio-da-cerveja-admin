@@ -1,46 +1,97 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ![emporio da cerveja logo](https://raw.githubusercontent.com/anaprzsiczny/emporio-da-cerveja/main/public/assets/logo-nome.svg)
 
-## Available Scripts
+ ![system demo](https://raw.githubusercontent.com/anaprzsiczny/emporio-da-cerveja-admin/main/public/assets/system-demo.gif)
 
-In the project directory, you can run:
+# Admin project
 
-### `npm start`
+Admin project for the site **[empório da cerveja](https://www.emporiodacerveja.com.br/)**. This project will cover all the **users** and **products** administration. 
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See **tests** section for notes on how to test the project locally.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+To run the project properly you will need the following softwares:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - [Git](https://git-scm.com/)
+ - [Node 14.16.0 LTS](https://nodejs.org/en/)
+ - NPM 6.14(Comes along with Node)
 
-### `npm run build`
+## Installing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Front end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these steps to get the front end project running in a development environment:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the project
+```sh
+git clone https://github.com/anaprzsiczny/emporio-da-cerveja-admin
+```
 
-### `npm run eject`
+2. Navigate into the project root folder:
+```sh
+cd emporio-da-cerveja-admin
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the node dependencies
+```sh
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run the project:
+```sh
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Back end
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Follow these steps to get the back end project running in a development environment:
 
-## Learn More
+1. Inside the project, go to the 'api' folder
+```sh
+cd api
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Install the node dependencies
+```sh
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Run json server on port 4000:
+```sh
+json-server db.json -m ./node_modules/json-server-auth -r routes.json --port 4000
+```
+
+## Running the tests
+
+The project currently have unit tests using [jest](https://jestjs.io/), to run the tests in your local environment, just run the command bellow:
+
+```sh
+npm test
+```
+
+## Using system
+
+When the project is running (back end and front end), you can use the following email and password to access the system:
+
+**admin user**
+
+**email:** helen@facebook.com |
+**password:** 123123
+
+**editor user**
+
+**email:** mauricio@google.com |
+**password:** 123123
+
+## Built With
+
+* [React](https://reactjs.org/) - The web framework used.
+* [TypeScript](https://www.typescriptlang.org/) - Javascript superset for type variables.
+* [Jest](https://jestjs.io/) - The test framework.
+* [JSON Server](https://github.com/typicode/json-server) - Back end mock.
+
+## Authors
+
+[**Ana Júlia Gomes Przsiczny**](https://github.com/anaprzsiczny)

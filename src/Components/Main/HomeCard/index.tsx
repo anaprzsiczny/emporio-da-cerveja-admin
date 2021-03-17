@@ -1,9 +1,14 @@
 import React from 'react';
 import './homeCard.css';
 
-const HomeCard = (props: any) => {
+interface HomeCardProps {
+  total: number,
+  text: string
+}
+
+const HomeCard = (props: HomeCardProps) => {
   return (
-    <div className="home-card">
+    <div className="home-card" data-testid="card">
       <p>{props.text}</p>
       <h2>{props.total}</h2>
     </div>

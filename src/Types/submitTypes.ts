@@ -3,13 +3,6 @@ export interface SubmitLoginTypes {
   password: string
 }
 
-export interface SubmitProductTypes {
-  title: string,
-  price: string,
-  description: string,
-  image: string
-}
-
 export interface SubmitUserTypes {
   name: string,
   email: string,
@@ -23,5 +16,5 @@ export interface SubmitProductTypes {
   price: string,
   description: string,
   image: string,
-  id?: number
+  id?: number | undefined
 }

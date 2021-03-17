@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './item.css'
 
-interface Props {
+interface ItemProps {
   para: string,
   texto: string,
   children?: any
 }
 
-const Item = (props: Props) => {
+const Item = (props: ItemProps) => {
   return(
     <div className="wrapper-link-sidebar">
       {props.children}

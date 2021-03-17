@@ -4,7 +4,7 @@ import './inputButton.css'
 
 const InputButton = (props: ButtonTypes) => {
   return(
-    <button className="input-button">{props.content}</button>
+    <button className="input-button" data-testid="btn">{props.content}</button>
   )
 }
 

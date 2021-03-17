@@ -1,9 +1,9 @@
 import React from 'react';
-import PageTitle from './PageTitle';
+import PageTitle, { PageTitleProps } from './PageTitle';
 import UserInfo from './UserInfo';
 import './header.css'
 
-const Header = (props: any) => {
+const Header = (props: PageTitleProps) => {
   return(
     <div className="header">
       <PageTitle pagina={props.pagina}/>
