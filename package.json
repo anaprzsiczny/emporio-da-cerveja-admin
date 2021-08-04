@@ -17,6 +17,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/redux-saga": "^0.10.5",
     "axios": "^0.21.1",
+    "json-server": "^0.16.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
